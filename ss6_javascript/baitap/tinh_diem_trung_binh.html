@@ -5,15 +5,20 @@
     <title>Tính điểm trung bình</title>
 </head>
 <body>
-<p onclick="doSomeThing()"><button>Click me</button></p>
+<p onclick="tinhTrungBinh()"><button>Click me</button></p>
 
 <script>
-  function doSomeThing() {
+  function tinhTrungBinh() {
     let a = parseFloat(prompt("Nhập điểm Toán"));
     let b = parseFloat(prompt("Nhập điểm Lý"));
     let c = parseFloat(prompt("Nhập điểm Hóa"));
-    var d = a + b + c;
-    document.write("Điểm trung bình : " + d/3);
+    if (a > 0 && b > 0 && c > 0) {
+      var d = a + b + c;
+      document.write("Điểm trung bình : " + d/3);
+    } else {
+      alert("Invalid input");
+      console.log("Invalid input");
+    }
   }
 </script>
 </body>
