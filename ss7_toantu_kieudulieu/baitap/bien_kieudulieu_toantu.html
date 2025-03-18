@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Biến | Kiểu dữ liệu | Toán tử</title>
+</head>
+<body>
+  <p onclick="tinhDiemTrungBinh()"><button>Bài 1</button> Tính điểm trung bình Vật lý, Hóa học, Sinh học</p>
+  <p onclick="doiNhietDo()"><button>Bài 2</button> Tính độ C sang độ F</p>
+  <p onclick="tinhDienTichHinhTron()"><button>Bài 3</button> Tính diện tích hình tròn</p>
+  <p onclick="tinhChuViHinhTron()"><button>Bài 4</button> Tính chu vi hình tròn</p>
+
+<script>
+  function tinhDiemTrungBinh() {
+    let a = parseFloat(prompt("Hãy nhập điểm Vật lý của bạn"));
+    let b = parseFloat(prompt("Hãy nhập điểm Hóa học của bạn"));
+    let c = parseFloat(prompt("Hãy nhập điểm Sinh học của bạn"));
+    let d = a + b + c;
+    if (a > 0 && b > 0 && c > 0) {
+      document.write("Điểm trung bình của bạn là: " + d/3);
+    } else {
+      alert("Invalid input");
+      console.log("invalid input");
+    }
+  }
+  function doiNhietDo() {
+    var doC = parseFloat(prompt("Hãy nhập nhiệt độ cần đổi"));
+    // while (doC.isNaN(parseFloat(doC))) {
+    //   doC = parseFloat(prompt("Hãy nhập nhiệt độ cần đổi"));
+    // }
+    let doF = doC*1.8 + 32;
+    document.write("Nhiệt độ sau khi đổi là: " + doF + " độ F");
+  }
+  function tinhDienTichHinhTron() {
+    const PI = Math.PI;
+    let r = parseFloat(prompt("Hãy nhập bán kính"));
+    // while (r<0){
+    //   let r = parseFloat(prompt("Hãy nhập bán kính"));
+    //   console.log("invalid input");
+    // }
+    let S = PI * r *r;
+    document.write("Diện tích hình tròn là: " + S);
+  }
+  function tinhChuViHinhTron() {
+    const PI = Math.PI;
+    let r = parseFloat(prompt("Hãy nhập bán kính"));
+    // while (r<0){
+    //   let r = parseFloat(prompt("Hãy nhập bán kính"));
+    //   console.log("invalid input");
+    // }
+    let C = 2 * PI * r;
+    document.write("Chu vi hinh tron là: " +C);
+  }
+
+</script>
+</body>
+</html>
