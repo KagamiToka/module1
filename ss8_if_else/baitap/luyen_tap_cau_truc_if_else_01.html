@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cấu trúc if else</title>
+</head>
+<body>
+<h3>Bài 1:Nhập hai số a và b, kiểm tra xem a có chia hết cho b hay không.</h3>
+<h3>Bài 2:Nhập tuổi, kiểm tra và in kết quả xem học sinh có đủ điều kiện vào học lớp 10 hay không.</h3>
+<h3>Bài 3:Nhập một số nguyên bất kỳ, in ra kết quả để xác định số đó lớn hơn, nhỏ hơn hay bằng 0.</h3>
+<h3>Bài 4:Nhập 3 số nguyên, tìm và in ra giá trị lớn nhất trong ba số đó.</h3>
+<h3>Bài 5:Xếp loại học lực của học sinh dựa trên: <br>
+    - Điểm bài kiểm tra. <br>
+    - Điểm thi giữa kỳ. <br>
+    - Điểm thi cuối kỳ.</h3>
+<h3>Bài 6:Tính hoa hồng nhận được dựa trên mức doanh số bán hàng.</h3>
+<h3>Bài 7:Tính cước điện thoại cho một hộ gia đình dựa trên các thông số được cung cấp.</h3>
+<h4 id="result" style="color: red"> Kết quả: </h4>
+<button type="button" onclick="myFunction()">Nhập lựa chọn</button>
+<script>
+    function myFunction() {
+        let a = 1;
+        while (a < 8) {
+            a = parseInt(prompt("Enter your choice"));
+            switch (a) {
+                case 1:
+                    checkSochiaHet();
+                    break;
+                case 2:
+                    checkDieuKienHocLopMuoi();
+                    break;
+                case 3:
+                    checkSoAmHayDuong();
+                    break;
+                case 4:
+                    searchMaxValue();
+                    break;
+                case 5:
+                    break;
+                case 6:
+                    break;
+                case 7:
+                    break;
+                default:
+                    alert(a)
+                    a = 100
+                    alert("Số không hợp lệ");
+            }
+        }
+    }
+
+    function checkSochiaHet() {
+        let a = prompt("Nhập số bị chia");
+        let b = prompt("Nhập số chia");
+        let c = a % b;
+        if (c !== 0) {
+            alert(a + " không chia hết cho " + b);
+            // document.getElementById("result").innerText = a + " không chia hết cho " + b;
+        } else {
+            alert(a + " chia hết cho " + b);
+            // document.getElementById("result").innerText = a + "  chia hết cho " + b;
+        }
+    }
+
+    function checkDieuKienHocLopMuoi() {
+        let a = prompt("Mời nhập số tuổi");
+        if (a > 60) {
+            document.getElementById("result").innerText = "chăm học ghê";
+        } else if (a > 40) {
+            document.getElementById("result").innerText = "Học, học nữa, học mãi";
+        } else if (a > 15) {
+            document.getElementById("result").innerText = "Lo mà học cho giỏi";
+        } else {
+            document.getElementById("result").innerText = "chưa đủ trình e ơi";
+        }
+    }
+
+    function checkSoAmHayDuong() {
+        let a = parseInt(prompt("Hãy nhập một số bất kỳ"));
+        if (a === 0) {
+            document.getElementById("result").innerText = a + " là số 0";
+        } else if (a > 0) {
+            document.getElementById("result").innerText = a + " là số dương";
+        } else {
+            document.getElementById("result").innerText = a + " là số âm";
+        }
+    }
+    function searchMaxValue() {
+        let a = prompt("Hãy nhập số đầu tiên");
+        let b = prompt("Hãy  nhập số tiếp theo")
+        let c = prompt("Hãy nhập số cuối cùng")
+        if(a > b && a > c) {
+            document.getElementById("result").innerText = a +" là số lớn nhất";
+        }else if(b > c && b > a) {
+            document.getElementById("result").innerText = b + " là số lớn nhất";
+        }else {
+            document.getElementById("result").innerText = c + " là số lớn nhất"
+        }
+    }
+
+</script>
+</body>
+</html>
