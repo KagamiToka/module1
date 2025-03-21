@@ -36,14 +36,14 @@
                     searchMaxValue();
                     break;
                 case 5:
+                    xepLoaiHocSinh();
                     break;
                 case 6:
+                    tinhHoaHong();
                     break;
                 case 7:
                     break;
                 default:
-                    alert(a)
-                    a = 100
                     alert("Số không hợp lệ");
             }
         }
@@ -65,39 +65,73 @@
     function checkDieuKienHocLopMuoi() {
         let a = prompt("Mời nhập số tuổi");
         if (a > 60) {
-            document.getElementById("result").innerText = "chăm học ghê";
+            alert("chăm học ghê");
+            // document.getElementById("result").innerText = "chăm học ghê";
         } else if (a > 40) {
-            document.getElementById("result").innerText = "Học, học nữa, học mãi";
+            alert("Học, học nữa, học mãi");
+            // document.getElementById("result").innerText = "Học, học nữa, học mãi";
         } else if (a > 15) {
-            document.getElementById("result").innerText = "Lo mà học cho giỏi";
+            alert("Lo mà học cho giỏi");
+            // document.getElementById("result").innerText = "Lo mà học cho giỏi";
         } else {
-            document.getElementById("result").innerText = "chưa đủ trình e ơi";
+            alert("chưa đủ trình e ơi");
+            // document.getElementById("result").innerText = "chưa đủ trình e ơi";
         }
     }
 
     function checkSoAmHayDuong() {
         let a = parseInt(prompt("Hãy nhập một số bất kỳ"));
         if (a === 0) {
-            document.getElementById("result").innerText = a + " là số 0";
+            alert(a + " là số 0");
+            // document.getElementById("result").innerText = a + " là số 0";
         } else if (a > 0) {
-            document.getElementById("result").innerText = a + " là số dương";
+            alert(a + " là số dương");
+            // document.getElementById("result").innerText = a + " là số dương";
         } else {
-            document.getElementById("result").innerText = a + " là số âm";
+            alert(a + " là số âm");
+            // document.getElementById("result").innerText = a + " là số âm";
         }
     }
     function searchMaxValue() {
         let a = prompt("Hãy nhập số đầu tiên");
-        let b = prompt("Hãy  nhập số tiếp theo")
-        let c = prompt("Hãy nhập số cuối cùng")
+        let b = prompt("Hãy  nhập số tiếp theo");
+        let c = prompt("Hãy nhập số cuối cùng");
         if(a > b && a > c) {
+            alert(a +" là số lớn nhất");
             document.getElementById("result").innerText = a +" là số lớn nhất";
         }else if(b > c && b > a) {
-            document.getElementById("result").innerText = b + " là số lớn nhất";
+            alert(b + " là số lớn nhất");
+            // document.getElementById("result").innerText = b + " là số lớn nhất";
         }else {
-            document.getElementById("result").innerText = c + " là số lớn nhất"
+            alert(c + " là số lớn nhất");
+            // document.getElementById("result").innerText = c + " là số lớn nhất";
         }
     }
-
+    function xepLoaiHocSinh() {
+        let a = parseFloat(prompt("Hãy nhập điểm kiểm tra"));
+        let b = parseFloat(prompt("Hãy  nhập điểm giũa kì"));
+        let c = parseFloat(prompt("Hãy nhập điểm cuối kì"));
+        let d = (a + b*2 + c*2) /5;
+        if (d > 9) {
+            alert("Xuất sắc");
+        } else if (d >= 8) {
+            alert("Giỏi");
+        } else if (d >= 7) {
+            alert("Khá");
+        } else if (d >= 6) {
+            alert("Trung bình");
+        } else {
+            alert("Học lại");
+        }
+    }
+    function tinhHoaHong() {
+        let a = parseFloat(prompt("Hãy nhập số sản phẩm bán được"));
+        if (a > 90) {
+            alert("Hoa hồng 20%");
+        } else {
+            alert("không cóa hoa hồng");
+        }
+    }
 </script>
 </body>
 </html>

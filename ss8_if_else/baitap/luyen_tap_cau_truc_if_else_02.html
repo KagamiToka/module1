@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AHHHHHHHHHHHHHHHHH</title>
+</head>
+<body>
+<h3>Bài 1:Chuyển từ độ C sang độ F.</h3>
+<h3>Bài 2:Chuyển từ mét sang feet.</h3>
+<h3>Bài 3:Tính diện tích hình vuông khi biết cạnh a.</h3>
+<h3>Bài 4:Tính diện tích hình  chữ nhật khi biết 02 cạnh a, b.</h3>
+<h3>Bài 5:Tính diện tích tam giác vuông khi biết 02 cạnh kề a, b.</h3>
+<h3>Bài 6:Giải phương trình bậc 1.</h3>
+<h3>Bài 7:Giải phương trình bậc 2.</h3>
+<button type="button" onclick="myFunction()">Nhập lựa chọn</button>
+<script>
+    function myFunction() {
+        let a = 1;
+        while (a < 8) {
+            a = parseInt(prompt("Enter your choice"));
+            switch (a) {
+                case 1:
+                    chuyenDoCDoF();
+                    break;
+                case 2:
+                    chuyenMetFeet();
+                    break;
+                case 3:
+                    tinhDienTichHinhVuong();
+                    break;
+                case 4:
+                    tinhDienTichHinhChuNhat()
+                    break;
+                case 5:
+                    tinhDienTichTamGiacVuong();
+                    break;
+                case 6:
+                    break;
+                case 7:
+                    break;
+                default:
+                    alert("Số không hợp lệ");
+            }
+        }
+    }
+
+    function chuyenDoCDoF() {
+        let doC = parseFloat(prompt("Hãy nhập độ C cần quy đổi"));
+        let doF = doC * 1.8 +32;
+        alert(doC + " dộ C = " + doF + " độ F");
+    }
+
+    function chuyenMetFeet() {
+        const E = 3.2808;
+        let met = parseFloat(prompt("Hãy nhập số meter cần chuyển đổi"));
+        let ft =met * E;
+        alert(met + " m = " + ft + " ft");
+    }
+
+    function tinhDienTichHinhVuong() {
+        let a = parseFloat(prompt("Hãy nhập cạnh hình vuông"));
+        let S;
+        do {
+            S = parseFloat(a*a);
+        } while (a < 0);
+        alert("Diện tích là: " +S);
+    }
+
+    function tinhDienTichHinhChuNhat() {
+        let a = parseFloat(prompt("Hãy nhập chiều dài"));
+        let b = parseFloat(prompt("Hãy nhập chiều rộng"));
+        let S;
+        do {
+            S = parseFloat(a*b);
+        }while (a > 0 && b > 0);
+        alert("Diện tích là: " +S);
+    }
+
+    function tinhDienTichTamGiacVuong() {
+        let a = parseFloat(prompt("Hãy nhập cạnh 1"));
+        let b = parseFloat(prompt("Hãy nhập cạnh 2"));
+        let S;
+        do {
+            S= 1/2 * a * b;
+        }while (a > 0 && b > 0);
+        alert("Diện tích là: " +S);
+    }
+</script>
+</body>
+</html>
