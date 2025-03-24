@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 6</title>
+</head>
+<body>
+<script>
+  // let n = parseInt(prompt("Nhập số tự nhiên"));
+  let count = 0;
+  let get = 0;
+  let set = 0;
+  for (let i = 0; i < 210; i++) {
+    if (i % 7 === 0) {
+      set += i;
+      // count++;
+      // for (let j = 0; j < count; j++) {
+      //   get += i;
+      //   set += get;
+      //   // alert("Tổng count lần " +count + ": " + set);
+      // }
+      // alert("Đếm " + count);
+    }
+  }
+  alert(set);
+  // alert("Tổng sau " + count +" lần: "+ set);
+</script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 5</title>
+</head>
+<body>
+ <script>
+   let f1 = 0;
+   let f2 = 1;
+   let f4 = 0;
+   for (let i = 0; i < 20; i++) {
+     let f3 = f2 + f1
+     f1 = f2;
+     f2 = f3;
+     f4 += f3;
+   }
+   alert(f4);
+ </script>
+</body>
+</html>
