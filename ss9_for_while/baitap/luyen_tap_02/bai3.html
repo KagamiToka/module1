@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 3</title>
+</head>
+<body>
+<script>
+  // let a = parseInt(prompt("Hãy nhập trường hợp góc vuông bạn muốn 1 - 4"));
+  // switch (a) {
+  //   case 1:
+  //     document.write("*");
+  //     document.write("<br>");
+  //     document.write("**");
+  //     document.write("<br>");
+  //     document.write("***");
+  //     document.write("<br>");
+  //     document.write("****");
+  //     document.write("<br>");
+  //     document.write("*****");
+  //     break;
+  //   case 2:
+  //     document.write("&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp*");
+  //     document.write("<br>")
+  //     document.write("&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp**");
+  //     document.write("<br>");
+  //     document.write("&nbsp&nbsp&nbsp&nbsp***");
+  //     document.write("<br>");
+  //     document.write("&nbsp&nbsp****");
+  //     document.write("<br>");
+  //     document.write("*****");
+  //     break;
+  //   case 3:
+  //     document.write("*****");
+  //     document.write("<br>");
+  //     document.write("****");
+  //     document.write("<br>");
+  //     document.write("***");
+  //     document.write("<br>");
+  //     document.write("**");
+  //     document.write("<br>");
+  //     document.write("*");
+  //     break;
+  //   case 4:
+  //     document.write("*****");
+  //     document.write("<br>");
+  //     document.write("&nbsp&nbsp****");
+  //     document.write("<br>");
+  //     document.write("&nbsp&nbsp&nbsp&nbsp***");
+  //     document.write("<br>");
+  //     document.write("&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp**");
+  //     document.write("<br>");
+  //     document.write("&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp*");
+  //     break;
+  //   default: alert("Không có trường hợp này")
+  // }
+  </script>
+
+<script>
+    let a = parseInt(prompt("Hãy nhập trường hợp góc vuông bạn muốn 1 - 4"));
+    switch (a) {
+        case 1:
+            for (var i = 1; i <= 5; i++) {
+                for (var j = 0; j < i; j++) {
+                    document.write("*");
+                    document.write("&nbsp");
+                }
+                document.write("<br>");
+            }
+            break;
+        case 2:
+            for (var i = 1; i <= 5; i++) {
+                for (var j = 6; j > i; j--) {
+                    document.write("*");
+                    document.write("&nbsp");
+                }
+                document.write("<br>");
+            }
+            break;
+        case 3:
+            for (var i = 1; i <= 5; i++) {
+                let row = "";
+                for (var j = 1; j <= i; j++) {
+                    row = row + " &nbsp";
+                }
+                for ( var k = 1; k <= 6-i; k++) {
+                    row = row + "*";
+                }
+                    document.write(row);
+                document.write("<br>");
+            }
+            break;
+        case 4:
+            for (var i = 1; i <= 5; i++) {
+                let row = "";
+                for ( var k = 1; k <= 6-i; k++) {
+                    row = row + " &nbsp";
+                }
+                for (var j = 1; j <= i; j++) {
+                    row = row + "*";
+                }
+                document.write(row);
+                document.write("<br>");
+            }
+            break;
+        default: alert("Không có trường hợp này");
+    }
+</script>
+</body>
+</html>

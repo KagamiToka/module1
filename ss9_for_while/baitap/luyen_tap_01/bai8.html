@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 8</title>
+</head>
+<body>
+  <button onclick="choiGame()">Bắt đầu</button>
+<script>
+  function choiGame() {
+    let a = parseInt(prompt("Hãy nhập khoảng mà bạn muốn đoán"));
+    for (let i = 0; i < 3; i++) {
+      let b = Math.floor(Math.random() * a);
+      let c = parseInt(prompt("Nhập số bạn đoán"));
+      if (c < b) {
+        alert("Số cần đoán lớn hơn");
+      } else if (c > b) {
+        alert("Số cần đoán nhỏ hơn");
+      } else if (c == b) {
+        alert("Bạn đã đoán đúng");
+      }
+    }
+    alert("You lose");
+  }
+</script>
+</body>
+</html>
