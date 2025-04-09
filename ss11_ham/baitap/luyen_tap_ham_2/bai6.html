@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai6</title>
+</head>
+<body>
+<script>
+    function isPositiveInteger(num) {
+        return Number.isInteger(num) && num > 0;
+    }
+    let a = prompt("Enter a number");
+    if (isPositiveInteger(a)) {
+        alert(a + "là số nguyên dương");
+    } else {
+        alert(a + "không phải số nguyên dương");
+    }
+</script>
+</body>
+</html>

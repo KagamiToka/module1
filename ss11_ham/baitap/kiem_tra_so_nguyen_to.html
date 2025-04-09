@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Check Prime Number</title>
+</head>
+<body>
+<script>
+  function isPrime(n) {
+    if (n < 2) return false;
+    for (let i = 2; i < n; i++) {
+      if (n % i === 0) return false;
+    }
+    return true;
+  }
+
+  let a = parseInt(prompt("Enter a number"));
+  if (isPrime(a) === false) {
+    alert("khong phai so nguyen to");
+  } else {
+    alert("la so nguyen to");
+  }
+</script>
+</body>
+</html>

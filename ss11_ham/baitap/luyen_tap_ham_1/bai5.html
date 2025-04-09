@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai5</title>
+</head>
+<body>
+<script>
+  const stars = ["Polaris", "Aldebaran", "Deneb", "Vega", "Altair", "Dubhe", "Regulus"];
+  const constellations = ["Ursa Minor", "Taurus", "Cygnus", "Lyra", "Aquila", "Ursa Major", "Leo"];
+
+  function findConstellation(starName) {
+    for (let i = 0; i < stars.length; i++) {
+      if (stars[i].toLowerCase() === starName.toLowerCase()) {
+        return constellations[i];
+      }
+    }
+    return null;
+  }
+
+  let inputStar = prompt("Nhập tên ngôi sao:");
+  let resultConstellation = findConstellation(inputStar);
+
+  if (resultConstellation) {
+    document.write("Ngôi sao " + inputStar + " thuộc chòm sao: " + resultConstellation);
+  } else {
+    document.write("Không tìm thấy ngôi sao " + inputStar + " trong danh sách.");
+  }
+</script>
+</body>
+</html>

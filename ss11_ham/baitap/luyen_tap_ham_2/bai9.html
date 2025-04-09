@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai 9</title>
+</head>
+<body>
+<script>
+    function checkCharInArray(charArray, char) {
+        let count = 0;
+        for (let i = 0; i < charArray.length; i++) {
+            if (charArray[i] === char) {
+                count++;
+            }
+        }
+        return count > 0 ? count : -1;
+    }
+    let charArr = ['a', 'b', 'a', 'c'];
+    document.write("Kiểm tra 'a' trong ", charArr, " : ", checkCharInArray(charArr, 'a') + "<br>");
+    document.write("Kiểm tra 'd' trong ", charArr, " : ", checkCharInArray(charArr, 'd'));
+</script>
+</body>
+</html>
