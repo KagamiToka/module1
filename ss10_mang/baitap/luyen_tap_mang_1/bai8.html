@@ -6,7 +6,26 @@
 </head>
 <body>
 <script>
+    function inputArray() {
+        let inputArr = [];
+        for (let i = 0; i < 10; i++) {
+            let num = parseInt(prompt(`Nhập phần tử thứ ${i + 1}:`));
+            if (isNaN(num)) {
+                alert("Vui lòng nhập số nguyên!");
+                return null;
+            }
+            inputArr.push(num);
+        }
+        return inputArr;
+    }
 
+    let arr = inputArray();
+    if (arr) {
+        document.write("Mảng người dùng nhập:", arr + "<br>");
+        arr.sort((a, b) => b - a);
+        console.log("Mảng sau khi sắp xếp giảm dần:", arr);
+        document.write("Mảng sau khi sắp xếp giảm dần: " + arr.join(", "));
+    }
 </script>
 </body>
 </html>

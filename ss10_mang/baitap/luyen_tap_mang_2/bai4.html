@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai 4</title>
+</head>
+<body>
+<script>
+  let str = "Lêu lêu mấy thằng nhóc";
+
+  function countWords(string) {
+    let words = string.trim().split(/\s+/);
+    return words.length;
+  }
+
+  document.write("Chuỗi: " + str + "<br>");
+  document.write("Số từ: " + countWords(str));
+</script>
+</body>
+</html>

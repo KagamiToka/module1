@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 5</title>
+</head>
+<body>
+<script>
+  let str1 = prompt("Nhập chuỗi thứ nhất:");
+  let str2 = prompt("Nhập chuỗi thứ hai:");
+
+  if (str1 && str2) {
+    document.write("Chuỗi 1: " + str1 + "<br>");
+    document.write("Chuỗi 2: " + str2 + "<br>");
+    document.write("Hai chuỗi giống nhau: " + compareStrings(str1, str2));
+  } else {
+    document.write("Vui lòng nhập cả hai chuỗi!");
+  }
+
+  function compareStrings(s1, s2) {
+    return s1 === s2;
+  }
+</script>
+</body>
+</html>

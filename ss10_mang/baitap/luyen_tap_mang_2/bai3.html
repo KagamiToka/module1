@@ -2,11 +2,25 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Bai 3</title>
 </head>
 <body>
 <script>
-  
+    let charArray = ['a', '1', 'b', '2', '5', 'c', '9', 'd'];
+    let size = charArray.length;
+
+    function countDigits(arr) {
+        let count = 0;
+        for (let i = 0; i < arr.length; i++) {
+            if (/^\d$/.test(arr[i])) {
+                count++;
+            }
+        }
+        return count;
+    }
+    console.log("Số ký tự số (0-9):", countDigits(charArray));
+    document.write("Mảng: " + charArray.join(", ") + "<br>");
+    document.write("Số ký tự số: " + countDigits(charArray));
 </script>
 </body>
 </html>
