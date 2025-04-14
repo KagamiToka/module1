@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hinh Chu Nhat</title>
+</head>
+<body>
+<canvas id="myCanvas"></canvas>
+<script>
+  class Rectangle{
+    constructor(width, height){
+      this.width = width;
+      this.height = height;
+    }
+    getWidth(){
+      return this.width;
+    }
+    getHeight(){
+      return this.height;
+    }
+    setWidth(width){
+      this.width = width;
+    }
+    setHeight(height){
+      this.height = height;
+    }
+    getArea(width, height) {
+      return this.width * this.height;
+    }
+    getPerimeter(width, height) {
+      return (this.width + this.height) *2;
+    }
+  }
+  let rectangle = new Rectangle(100,50);
+  let width = rectangle.getWidth();
+  let height = rectangle.getHeight();
+  let perimeter = rectangle.getPerimeter();
+  let area = rectangle.getArea();
+  document.write("<br>");
+  document.write("Chieu rong: " + width + "<br>");
+  document.write("Chieu dai: " + height + "<br>");
+  document.write("Dien tich: " + area + "<br>");
+  document.write("Chu vi: " + perimeter + "<br>");
+  var c = document.getElementById("myCanvas").getContext("2d");
+  c.fillRect(0,0, width, height);
+</script>
+</body>
+</html>

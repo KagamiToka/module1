@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Temperature</title>
+</head>
+<body>
+<script>
+  class Temperature{
+    constructor(temperature){
+      this.temperature = temperature;
+    }
+    getTemperature(){
+      return this.temperature;
+    }
+    setTemperature(temperature){
+      this.temperature = temperature;
+    }
+    getChangeToFahrenheit(){
+      return this.temperature*1.8+32;
+    }
+    getChangeToCelcius(){
+      return (this.temperature - 32)/1.8;
+    }
+  }
+  let c = new Temperature(parseFloat(prompt("Enter temperature")));
+  if(c < -273) {
+    alert("Nhiet do toi thieu la -273");
+  }else {
+    let doF = c.getChangeToFahrenheit();
+    let doC = c.getChangeToCelcius();
+    document.write("Fahrenheit temperature is: " + doF + +" F" + "<br>");
+    document.write("Celius temperature is: " + doC + +" C" + "<br>");
+  }
+</script>
+</body>
+</html>

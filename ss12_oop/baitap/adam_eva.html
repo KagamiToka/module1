@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Adam and Eva</title>
+</head>
+<body>
+<script>
+    class Apple {
+        weight;
+
+        constructor(weight) {
+            this.weight = weight;
+        }
+
+        decrease() {
+            if (this.weight > 0) {
+                this.weight--;
+            }
+        }
+
+        isEmpty() {
+            return this.weight === 0;
+        }
+
+        getWeight() {
+            return this.weight;
+        }
+    }
+
+    class Human {
+        name;
+        gender;
+        weight;
+
+        constructor(name, gender, weight) {
+            this.name = name;
+            this.gender = gender;
+            this.weight = weight;
+        }
+
+        getName() {
+            return this.name;
+        }
+
+        getGender() {
+            return this.gender;
+        }
+
+        getWeight() {
+            return this.weight;
+        }
+
+        say(message) {
+            console.log(`${this.name}: ${message}`);
+        }
+
+        eatApple(apple) {
+            if (!apple.isEmpty()) {
+                apple.decrease();
+                this.weight++;
+                this.say("Tui đã đớp miếng táo!");
+            } else {
+                this.say("Ăn hết rầu!");
+            }
+        }
+
+        checkAppleWeight(apple) {
+            this.say(`Apple's weight: ${apple.getWeight()}`);
+        }
+    }
+
+    let apple = new Apple(10);
+    let adam = new Human("Adam", "Male", 70);
+    let eve = new Human("Eva", "Female", 50);
+
+    console.log("Trạng thái ban đầu:");
+    adam.checkAppleWeight(apple);
+    console.log(`Adam's weight: ${adam.getWeight()}`);
+    console.log(`Eva's weight: ${eve.getWeight()}`);
+    console.log("------------------------");
+
+    while (!apple.isEmpty()) {
+        adam.eatApple(apple);
+        adam.checkAppleWeight(apple);
+        console.log(`Adam's weight: ${adam.getWeight()}`);
+        console.log("------------------------");
+
+        if (!apple.isEmpty()) {
+            eve.eatApple(apple);
+            eve.checkAppleWeight(apple);
+            console.log(`Eva's weight: ${eve.getWeight()}`);
+            console.log("------------------------");
+        }
+    }
+
+    console.log("Trạng thái cuối:");
+    adam.checkAppleWeight(apple);
+    console.log(`Adam's weight: ${adam.getWeight()}`);
+    console.log(`Eva's weight: ${eve.getWeight()}`);
+</script>
+</body>
+</html>

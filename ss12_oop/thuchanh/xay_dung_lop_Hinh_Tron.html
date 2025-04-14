@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>OOP</title>
+</head>
+<body>
+<script>
+  class HinhTron {
+      constructor(radius, color) {
+          this.radius = radius;
+          this.color = color;
+          // this.Circle = Circle();
+      }
+
+      getRadius() {
+          return this.radius;
+      }
+      setRadius (radius) {
+          this.radius = radius;
+      }
+      getColor() {
+          return this.color;
+      }
+      setColor(color) {
+          this.color = color;
+      }
+      getArea() {
+          return Math.PI * radius * radius;
+      }
+  }
+
+  let myCircle = new HinhTron(10,"Ocean");
+  let radius = myCircle.getRadius();
+  let area = myCircle.getArea();
+  let color = myCircle.getColor();
+  alert("Hình tròn có bán kính: " + radius + ", Area: " + area + ", Color: " + color);
+</script>
+</body>
+</html>

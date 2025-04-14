@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bật tình yêu lên</title>
+</head>
+<body>
+<script>
+    class LoveLamp {
+        status = false;
+
+        constructor() {}
+
+        turnOff() {
+            this.status = false;
+        }
+
+        turnOn() {
+            this.status = true;
+        }
+
+        getStatus() {
+            return this.status;
+        }
+    }
+
+    class SwitchButton {
+        status = false;
+        lamp;
+
+        constructor() {}
+
+        connectToLamp(loveLamp) {
+            this.lamp = loveLamp;
+        }
+
+        switchOff() {
+            this.status = false;
+            if (this.lamp) {
+                this.lamp.turnOff();
+            }
+        }
+
+        switchOn() {
+            this.status = true;
+            if (this.lamp) {
+                this.lamp.turnOn();
+            }
+        }
+
+        getStatus() {
+            return this.status;
+        }
+    }
+
+    let lamp = new LoveLamp();
+    let switchButton = new SwitchButton();
+
+    switchButton.connectToLamp(lamp);
+
+    for (let i = 1; i <= 10; i++) {
+        console.log(`Step ${i}:`);
+        if (i % 2 === 1) {
+            console.log("Switch ON");
+            switchButton.switchOn();
+        } else {
+            console.log("Switch OFF");
+            switchButton.switchOff();
+        }
+        console.log(`Lamp status: ${lamp.getStatus() ? "Yêu" : "Không Yêu"}`);
+        console.log("------------------------");
+    }
+</script>
+</body>
+</html>
