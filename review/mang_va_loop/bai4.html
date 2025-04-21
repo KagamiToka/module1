@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mang va Loop</title>
+</head>
+<body>
+<script>
+  let a;
+  let b;
+  do {
+    menu();
+    b = prompt("Hãy nhập lựa chọn của bạn");
+    switch (b) {
+      case "1":
+        a = calculateBill(12000);
+        console.log("Đơn giá:  12000 VNĐ");
+        console.log("Thành tiền: " + a + " VNĐ");
+        break;
+      case "2":
+        a = calculateBill(15000);
+        console.log("Đơn giá:  15000 VNĐ");
+        console.log("Thành tiền: " + a + " VNĐ");
+        break;
+      case "3":
+        a = calculateBill(20000);
+        console.log("Đơn giá:  20000 VNĐ");
+        console.log("Thành tiền: " + a + " VNĐ");
+        break;
+      case "4":
+        a = calculateBill(18000);
+        console.log("Đơn giá:  18000 VNĐ");
+        console.log("Thành tiền: " + a + " VNĐ");
+        break;
+      case "5":
+        a = calculateBill(5000);
+        console.log("Đơn giá:  5000 VNĐ");
+        console.log("Thành tiền: " + a + " VNĐ");
+        break;
+      case "6":
+        a = calculateBill(25000);
+        console.log("Đơn giá:  25000 VNĐ");
+        console.log("Thành tiền: " + a + " VNĐ");
+        break;
+      case "7":
+        console.log("Đã thoát.......")
+        break;
+      default: alert("Menu not found");
+    }
+  } while (b != 7);
+
+  function menu() {
+    console.log("---------MENU---------");
+    console.log("-----1. Cafe-----");
+    console.log("-----2. Cam vắt------");
+    console.log("-----3. Nước ép cà rốt------");
+    console.log("-----4. Nước ép cà chua------");
+    console.log("-----5. Nước lọc-----");
+    console.log("-----6. Nước dừa-----");
+    console.log("-----7. Thoát-----");
+  }
+
+  function calculateBill(cash) {
+    let n = parseInt(prompt("Nhập số lượng bạn muốn mua"));
+    console.log("Số lượng: " + n);
+    return n*cash;
+  }
+</script>
+</body>
+</html>
