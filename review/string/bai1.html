@@ -6,7 +6,32 @@
 </head>
 <body>
 <script>
+    let str = prompt("Hãy nhập chuỗi");
+    let result = chuanHoa(str);
+    let kq = checkKyTuDaiNhat(str);
+    console.log(str);
+    console.log(result);
+    console.log(kq);
+    console.log(typeof(result));
 
+    function chuanHoa(str) {
+        let a = str.toLowerCase().trim().split(/\s+/);
+        for (let i = 0; i < a.length; i++) {
+            a[i] = a[i].charAt(0).toUpperCase() + a[i].slice(1);
+        }
+        return a.join(' ');
+    }
+
+    function checkKyTuDaiNhat(str) {
+        let a = str.trim().split(/\s+/);
+        let b = a[0];
+        for (let j = 1; j < a.length; j++) {
+            if (a[j].length > b.length) {
+                b = a[j];
+            }
+        }
+        return b;
+    }
 </script>
 </body>
 </html>

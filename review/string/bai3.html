@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>String</title>
+</head>
+<body>
+<script>
+  let a = "aabcc";
+  let b = "adcaa";
+  // let s1 = [...new Set(a.split(""))];
+  // let s2 = [...new Set(b.split(""))];
+  let count = 0;
+  for (let i = 0; i < a.length; i++) {
+    if (b.includes(a[i])) {
+      count++
+    }
+  }
+  console.log("Mảng 1: " + a);
+  console.log("Mảng 2: " + b);
+  console.log("Mảng 1 và 2 có " + count + " ký tự chung");
+  console.log();
+</script>
+</body>
+</html>

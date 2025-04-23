@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mảng 2 chiều</title>
+</head>
+<body>
+<script>
+    let a = [];
+    let m = prompt("Hãy nhập số cột");
+    let n = prompt("Hãy nhập số hàng");
+    for (let i = 0; i < m; i++) {
+        a[i] = [];
+        for (let j = 0; j < n; j++) {
+            // a.push([prompt("Nhập phần tử hàng " + (i+1)), prompt("Nhập phần tử thứ " + (j+1))]);
+            a[i][j] = Math.floor(Math.random() * 100) + 1;
+        }
+    }
+    console.log(a);
+
+    
+</script>
+</body>
+</html>
