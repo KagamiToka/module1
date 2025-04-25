@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>OOP</title>
+</head>
+<body>
+<p><button onclick="addStudent()">Create new Student</button> | <button onclick="removeStudent()">Delete student</button> | <button onclick="editStudent()">Edit student</button></p>
+<p id="display"></p>
+<script>
+    class Student {
+        id;
+        name;
+        lop;
+        email;
+        dateOfBirth;
+        module;
+
+        constructor(id, name, lop, email, dateOfBirth, module) {
+            this.id = id;
+            this.name = name;
+            this.lop = lop;
+            this.email = email;
+            this.dateOfBirth = dateOfBirth;
+            this.module = module;
+        }
+
+        getId() {
+            return this.id;
+        }
+
+        setId(id) {
+            this.id = id;
+        }
+
+        getName() {
+            return this.name;
+        }
+
+        setName(name) {
+            this.name = name;
+        }
+
+        getLop() {
+            return this.lop;
+        }
+
+        setLop(lop) {
+            this.lop = lop;
+        }
+
+        getEmail() {
+            return this.email;
+        }
+
+        setEmail(email) {
+            this.email = email;
+        }
+
+        getDateOfBirth() {
+            return this.dateOfBirth;
+        }
+
+        setDateOfBirth(dateOfBirth) {
+            this.dateOfBirth = dateOfBirth;
+        }
+
+        getModule() {
+            return this.module;
+        }
+
+        setModule(module) {
+            this.module = module;
+        }
+    }
+
+    let studentList = [
+        new Student("DE180527", "Nguyen Van Nam", "SE18D08", "namnvde180527@fpt.edu.vn", "14/09/2004", "Module 1"),
+        new Student("DE180535", "Lê Văn B", "SE18D08", "Blvde180535@fpt.edu.vn", "29/02/2004", "Module 1"),
+        new Student("DE180548", "Võ C", "SE18D08", "Cvde180548@fpt.edu.vn", "27/12/2003", "Module 1"),
+    ];
+    display();
+    function display() {
+        let tableString = `<table border="1" style="border-collapse: collapse;">
+                                <tr>
+                                    <th>STT</th>
+                                    <th>MSSV</th>
+                                    <th>Họ và tên</th>
+                                    <th>Lớp</th>
+                                    <th>Email</th>
+                                    <th>Ngày sinh</th>
+                                    <th>Module</th>
+                                </tr>`
+        for (let i = 0; i < studentList.length; i++) {
+            tableString += `<tr>
+                                <td>${i + 1}</td>
+                                <td>${studentList[i].id}</td>
+                                <td>${studentList[i].name}</td>
+                                <td>${studentList[i].lop}</td>
+                                <td>${studentList[i].email}</td>
+                                <td>${studentList[i].dateOfBirth}</td>
+                                <td>${studentList[i].module}</td>
+                            </tr>`
+        }
+        tableString += `</table>`;
+        document.getElementById("display").innerHTML = tableString;
+    }
+
+    function addStudent() {
+        let newId = prompt("Nhập Student ID");
+        let newName = prompt("Nhập Student Name");
+        let newLop = prompt("Nhập Student Lop");
+        let newEmail = prompt("Nhập Student Email");
+        let newDateOfBirth = prompt("Nhập Student Date of Birth");
+        let newModule = prompt("Nhập Student Module");
+
+        for (let i = 0; i < studentList.length; i++) {
+            if (newId == "" || newName == "" || newLop == "" || newEmail == "" || newDateOfBirth == "" || newModule == "") {
+                alert("Bạn chưa nhập đủ thông tin");
+                return;
+            } else if (newId == studentList[i].id) {
+                alert("Mã học viên đã được sử dụng");
+            }
+        }
+
+        let newStudent = new Student(newId, newName, newLop, newEmail, newDateOfBirth, newModule);
+        studentList.push(newStudent);
+        display();
+    }
+
+    function removeStudent() {
+        let a = prompt("Hãy nhập id student bạn muốn xóa");
+        deleteStudent(a);
+        display();
+    }
+
+    function deleteStudent(id) {
+         let conf = confirm("Bạn có chắc muốn xóa học viên này?");
+         if (conf == true) {
+             for (let i = 0; i < studentList.length; i++) {
+                 if (studentList[i].id == id) {
+                     studentList.splice(i, 1);
+                     break;
+                 }
+             }
+         }
+    }
+
+    function editStudent() {
+        let a = prompt("Nhập Student ID bạn muốn Edit");
+        updateStudent(a);
+        display();
+    }
+    function updateStudent(id) {
+        for (let i = 0; i < studentList.length; i++) {
+            if (studentList[i].id == id) {
+                studentList[i].setId(prompt("Nhập Student ID"));
+                studentList[i].setName(prompt("Nhập Student Name"));
+                studentList[i].setLop(prompt("Nhập Student Lop"));
+                studentList[i].setEmail(prompt("Nhập Student Email"));
+                studentList[i].setDateOfBirth(prompt("Nhập Student Date of Birth"));
+                studentList[i].setModule(prompt("Nhập Student Module"));
+            } else {
+                alert("Không tìm thấy");
+            }
+        }
+    }
+</script>
+</body>
+</html>
