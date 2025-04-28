@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let n = prompt("Nhap so phan tu cua mang");
+    let array = [];
+    while (n > 20) {
+        alert("So phan tu cua mang phai nho hon 20 (< 20)");
+        n = prompt("Nhap so phan tu cua mang");
+    }
+    for (let i = 0; i < n; i++) {
+        array[i] = Math.floor(Math.random() * 100) + 1;
+    }
+    let sum = 0;
+    let boi35 = [];
+    for (let i = 0; i < array.length; i++) {
+        if (array[i] % 3 == 0 && array[i] % 5 == 0) {
+            sum += array[i];
+            boi35.push(array[i]);
+        }
+    }
+    document.write("Mang: " + array + "<br>");
+    document.write("Boi cua 3 va 5: " + boi35 + "<br>");
+    document.write("Tong cac so la boi cua 3 va 5: " + sum);
+</script>
+</body>
+</html>

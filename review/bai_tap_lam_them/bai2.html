@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Review</title>
+</head>
+<body>
+<script>
+    // Hàm viết tắt cụm từ
+    function abbreviatePhrase(phrase) {
+        // Bước 1: Tách cụm từ thành các từ, xử lý nhiều khoảng trắng
+        const words = phrase.trim().split(/\s+/);
+        const wordCount = words.length;
+
+        // Bước 2: Xử lý theo số từ trong cụm từ
+        if (wordCount === 1) {
+            // Nếu chỉ có 1 từ
+            return "chuỗi này chỉ được tính chỉ có 1 từ";
+        } else {
+            // Nếu có từ 2 từ trở lên, tạo viết tắt
+            let abbreviation = "";
+            for (let word of words) {
+                if (word.length > 0) {
+                    abbreviation += word[0].toUpperCase();
+                }
+            }
+            return abbreviation;
+        }
+    }
+
+    // Hàm kiểm tra và hiển thị kết quả
+    function processPhrase(phrase) {
+        const result = abbreviatePhrase(phrase);
+        console.log(`Cụm từ: ${phrase}`);
+        console.log(`Kết quả: ${result}`);
+        document.write(`Cụm từ: ${phrase}<br>`);
+        document.write(`Kết quả: ${result}<br><br>`);
+    }
+
+    // Test cases
+    // Test 1: Cụm từ có nhiều từ
+    processPhrase("Object Oriented Programming"); // Kết quả: OOP
+
+    // Test 2: Cụm từ chỉ có 1 từ
+    processPhrase("ObjectORIENTED"); // Kết quả: chuỗi này chỉ được tính chỉ có 1 từ
+
+    // Test 3: Cụm từ có nhiều khoảng trắng
+    processPhrase("Object   Oriented   Programming"); // Kết quả: OOP
+</script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  let n = parseInt(prompt("Nhap so phan tu mang"));
+  while (n >50) {
+    alert("Mang toi da 50 phan tu");
+    n = parseInt(prompt("Nhap lai so phan tu"));
+  }
+  let array = [];
+  for (let i = 0; i < n; i++) {
+    array[i] = Math.floor(Math.random() * 50) + 1;
+  }
+  document.write("Mang: " + array + "<br>");
+  let k = parseInt(prompt("Nhap so nguyen duong k"));
+  document.write("So k: " + k + "<br>");
+  let count = 0;
+  let capSo = [];
+  for (let i = 0; i < array.length; i++) {
+    for (let j = i + 1; j < array.length; j++) {
+      if ((array[i] + array[j]) % k == 0 && array[i] != array[j]) {
+        count++;
+        capSo.push(array[i],array[j]);
+      }
+    }
+  }
+  document.write("Co " + count + " cap so co tong chia het cho " + k + "<br>");
+  document.write("Cac cap so: " + capSo + "<br>");
+</script>
+</body>
+</html>

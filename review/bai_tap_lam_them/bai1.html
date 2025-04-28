@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Review</title>
+</head>
+<body>
+<script>
+    // let n = parseInt(prompt("Hãy nhập số phần tử mảng"));
+    // while (n > 15 || n%3 != 0) {
+    //     alert("Hãy nhập số chia hết cho 3 và nhỏ hơn bằng 15");
+    //     n = parseInt(prompt("Mời nhập lại"));
+    // }
+    let a = [3,4,5,5,12,13,7,24,25];
+    let count = 0;
+    // for (let i = 0; i < n; i++) {
+    //     a[i] = Math.floor(Math.random() * 10) + 1;
+    // }
+    console.log("Mảng: " +a);
+    let c = [];
+    for (let i = 0; i < a.length; i+=3) {
+        let b = [];
+        for (let j = i; j < i+3 && j < a.length; j++) {
+            b.push(a[j]);
+        }
+        if (b.length === 3) {
+            b.sort((x, y) => x - y); // Sắp xếp tăng dần
+            if (Math.pow(b[2], 2) == Math.pow(b[0], 2) + Math.pow(b[1], 2)) {
+                count++;
+                c.push(b);
+            }
+        }
+    }
+
+    console.log("Số nhóm thỏa mãn điều kiện:", count);
+    console.log("Các nhóm:", c);
+    document.write(`Mảng: [${a.join(", ")}]<br>`);
+    document.write(`Số nhóm thỏa mãn điều kiện: ${count}<br>`);
+    document.write(`Các nhóm: ${JSON.stringify(c)}`);
+</script>
+</body>
+</html>

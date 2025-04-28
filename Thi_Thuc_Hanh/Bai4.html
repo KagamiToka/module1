@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    body{
+        width: 100%;
+        height: 100%;
+        padding-top: 15%;
+        justify-items: center;
+    }
+    table {
+        width: 100%;
+        height: 100%;
+        border-collapse: collapse;
+        box-sizing: border-box;
+        border: 2px solid black;
+        box-shadow: 1px 2px 2px gray;
+    }
+    th{
+        color: red;
+        background-color: yellow;
+    }
+</style>
+<body>
+<button onclick="themKhachHang()">Them Khach Hang</button>
+<p id="dislay"></p>
+<script>
+  class KhachHang {
+    maKhachHang;
+    tenKhachHang;
+    soDienThoai;
+    diaChi;
+    email;
+    constructor(maKhachHang, tenKhachHang, soDienThoai, diaChi, email) {
+      this.maKhachHang = maKhachHang;
+      this.tenKhachHang = tenKhachHang;
+      this.soDienThoai = soDienThoai;
+      this.diaChi = diaChi;
+      this.email = email;
+    }
+    getMaKhachHang() {
+      return this.maKhachHang;
+    }
+    setMaKhachHang(maKhachHang) {
+      this.tenKH = maKhachHang;
+    }
+    getTenKhachHang() {
+      return this.tenKhachHang;
+    }
+    setTenKhachHang(tenKhachHang) {
+      this.tenKH = tenKhachHang;
+    }
+    getSoDienThoai() {
+      return this.soDienThoai;
+    }
+    setSoDienThoai(soDienThoai) {
+      this.soDienThoai = soDienThoai;
+    }
+    getDiaChi() {
+      return this.diaChi;
+    }
+    setDiaChi(diaChi) {
+      this.diaChi = diaChi;
+    }
+    getEmail() {
+      return this.email;
+    }
+    setEmail(email) {
+      this.email = email;
+    }
+  }
+  let danhSachKhachHang = [
+          new KhachHang("KH01","Le Van B", "Quang Nam","0911222333","blv@gmail.com"),
+          new KhachHang("KH02","Vo Van A", "Quang Binh","0933444555","avv@gmail.com"),
+          new KhachHang("KH03","Tran Thi D", "Quang Tri","0955666777","dtt@gmail.com")
+  ];
+  hienThi();
+
+  function hienThi() {
+    let bang = `<table border="1px" style="border-collapse: collapse">
+                  <tr>
+                    <th>STT</th>
+                    <th>Ma Khach Hang</th>
+                    <th>Ten Khach Hang</th>
+                    <th>So dien thoai</th>
+                    <th>Dia chi</th>
+                    <th>Email</th>
+                  </tr>`
+    for (let i = 0; i < danhSachKhachHang.length; i++) {
+      bang += `<tr>
+                <td>${i + 1}</td>
+                <td>${danhSachKhachHang[i].maKhachHang}</td>
+                <td>${danhSachKhachHang[i].tenKhachHang}</td>
+                <td>${danhSachKhachHang[i].soDienThoai}</td>
+                <td>${danhSachKhachHang[i].diaChi}</td>
+                <td>${danhSachKhachHang[i].email}</td>
+              </tr>`;
+    }
+    bang += `</table>`;
+    document.getElementById("dislay").innerHTML = bang;
+  }
+
+  function themKhachHang() {
+    let maKhachHangMoi = prompt("Ma Khach Hang");
+    for (let i = 0; i < danhSachKhachHang.length; i++) {
+      if (danhSachKhachHang[i].maKhachHang == maKhachHangMoi) {
+        alert("Ma Khach Hang da duoc su dung");
+        return;
+      }
+    }
+    let tenKhachHangMoi = prompt("Ten Khach Hang");
+    let soDienThoaiMoi = prompt("So dien thoai");
+    let diaChiMoi = prompt("Dia chi");
+    let emailMoi = prompt("Email");
+
+    let khachHangMoi = new KhachHang(maKhachHangMoi, tenKhachHangMoi, soDienThoaiMoi, diaChiMoi, emailMoi);
+    danhSachKhachHang.push(khachHangMoi);
+    hienThi();
+  }
+</script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  let diem = parseInt(prompt("Hay nhap diem"));
+  while (diem < 0 || diem > 100) {
+    alert("Diem nam trong khoang 0 - 100");
+    diem = parseInt(prompt("Hay nhap lai diem"));
+  }
+  document.write("Diem da nhap: " + diem + "<br>");
+  if (lamTronDiem(diem) < 50) {
+    document.write("Not Pass (Truot)" + "<br>");
+  } else {
+    document.write("Pass" + "<br>");
+  }
+  document.write("Diem sau khi lam tron: " + lamTronDiem(diem));
+
+  function lamTronDiem(diem) {
+    let boi5 = diem - diem%5 + 5;
+    if (diem < 45) {
+        return diem;
+    } else if(boi5 - diem < 3) {
+      return boi5;
+    } else {
+      return diem;
+    }
+  }
+</script>
+</body>
+</html>
